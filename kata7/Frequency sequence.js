@@ -1,13 +1,17 @@
 // Frequency sequence
 
-function freqSeq(str, sep) {
-  let strObj = [...str].reduce((obj, el) => {
-    obj[el] = (obj[el] || 0) + 1;
-    return obj
-  }, {});
-  return str.split("").map(char => char = strObj[char]).join(sep)
-}
+// function freqSeq(str, sep) {
+//   let strObj = [...str].reduce((obj, el) => {
+//     obj[el] = (obj[el] || 0) + 1;
+//     return obj
+//   }, {});
+//   return str.split("").map(char => char = strObj[char]).join(sep)
+// }
 
+// Another solution
+function freqSeq(str, sep) {
+  return str.split('').map(char => str.split(char).length - 1).join(sep);
+}
 
 freqSeq("hello world", "-");
 freqSeq("19999999", ":");
