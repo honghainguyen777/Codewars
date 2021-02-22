@@ -1,12 +1,19 @@
 
 // More Zeros than Ones
+// function moreZeros(s){
+//   return [...s].filter((char, index, newArr) => {
+//     let x = [...char.charCodeAt().toString(2)].reduce((obj, el) => {obj[el] = (obj[el] || 0) + 1; return obj},{});
+//     return (x[0] > x[1] && newArr.indexOf(char) === index);
+//   })
+// }
+
+// Shoter version
 function moreZeros(s){
   return [...s].filter((char, index, newArr) => {
-    let x = [...char.charCodeAt().toString(2)].reduce((obj, el) => {obj[el] = (obj[el] || 0) + 1; return obj},{});
-    return (x[0] > x[1] && newArr.indexOf(char) === index);
+    let x = char.charCodeAt().toString(2)
+    return (x.split('0').length > x.split('1').length && newArr.indexOf(char) === index);
   })
 }
-
 
 moreZeros('Great job!') //['a', ' ', 'b', '!']
 // for (var i = 0; i < input.length; i++) {
