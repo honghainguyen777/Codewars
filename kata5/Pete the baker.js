@@ -1,8 +1,7 @@
 // Pete, the baker
 
 function cakes(recipe, available) {
-  let min = Math.min(...Object.keys(recipe).map((key) => Math.floor(available[key] / recipe[key])))
-  return isNaN(min) ? 0 : min;
+  return Math.min(...Object.keys(recipe).map((key) => Math.floor(available[key] / recipe[key]))) || 0;
 }
 
 
