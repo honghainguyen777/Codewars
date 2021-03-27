@@ -2,13 +2,11 @@
 
 // We want to create a function that will add numbers together when called in succession.
 // function add(n){
-//   let currentSum = n;
 //   function addF(x) {
-//     currentSum += x;
-//     return addF;
+//     return add(n + x);
 //   }
 //   addF.valueOf = function() {
-//     return currentSum;
+//     return n;
 //   }
 //   return addF;
 // }
