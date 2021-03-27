@@ -10,13 +10,18 @@
 function howManyMeasurements(n){
   let count = 0;
   while (n !== 1) {
-    const prev = n;
-    n = Math.round(n/3);
-    if (n * 3 < prev) n = prev - n*2;
+    n = Math.ceil(n/3);
     count++;
   }
   return count;
 }
+
+// function howManyMeasurements(n){
+//   if (n <= 1) {
+//     return 0
+//   }
+//   return 1 + Math.ceil(howManyMeasurements(Math.ceil(n/3)))
+// }
 
 howManyMeasurements(4); // 2
 
